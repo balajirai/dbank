@@ -29,4 +29,9 @@ actor DBank {
     }
   };
 
+  // read only type (much faster than above update functions)
+  public query func checkBalance(): async Nat{
+    return currentValue;
+  }
+
 }
