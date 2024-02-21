@@ -19,8 +19,14 @@ actor DBank {
   // topUp();
 
   public func withdrawal(amount: Nat){
+    let tempValue: Int = currentValue - amount;
+    if(tempValue >= 0){
       currentValue-=amount;
       Debug.print(debug_show(currentValue));
+    }
+    else{
+      Debug.print("Amount too large. No withdrawal");
+    }
   };
-  
+
 }
